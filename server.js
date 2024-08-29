@@ -8,6 +8,8 @@ import paymentRoutes from './routes/paymentRoute.js'
 import settingsRoutes from './routes/settingsRoute.js'
 import cookieParser   from 'cookie-parser';
 import { errorHandler, notFound } from "./middleware/errorMiddleware.js";
+import cors from "cors";
+
 
 
 // dotenv.config({path:"backend/.env"});
@@ -22,6 +24,7 @@ const app = express();
 app.use(express.json({limit:'2mb'}));
 app.use(express.urlencoded({extended:true}))
 app.use(cookieParser());
+app.use(cors());
 
 
 // import asyncHandler from "./middleware/asyncHandler.js";
