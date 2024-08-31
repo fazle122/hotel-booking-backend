@@ -4,10 +4,6 @@ import Booking from "../models/bookingModel.js";
 
 
 
-// http://localhost:5173/profile
-// http://localhost:5173/profile
-// http://localhost:5173/dashboard
-// http://localhost:5173/
 
 const store_id = process.env.SSL_STORE_ID;
 const store_passwd = process.env.SSL_STORE_PASS
@@ -28,7 +24,8 @@ const getPaymet = asyncHandler(async(req,res) => {
         tran_id: tranId, // use unique tran_id for each api call
         success_url: `http://localhost:8000/api/bookings/success/${tranId}`,
         fail_url: `http://localhost:8000/api/bookings/fail`,
-        cancel_url: 'http://localhost:5173/dashboard',
+        cancel_url: 'https://hotel-booking-rho-one.vercel.app/dashboard',
+        // cancel_url: 'http://localhost:5173/dashboard',
         ipn_url: 'http://localhost:3030/ipn',
         shipping_method: 'Courier',
         product_name: bookingData?.cabin?.name,

@@ -126,7 +126,8 @@ const confirmBooking = asyncHandler(async(req,res) => {
             console.log(booking);
             const editResponse = await booking.save()
             // res.status(200).json({message:'Booking updated',data:editResponse})
-            res.redirect(`http://localhost:5173/success/${req.params.tranId}`)
+            // res.redirect(`http://localhost:5173/success/${req.params.tranId}`)
+            res.redirect(`https://hotel-booking-rho-one.vercel.app/success/${req.params.tranId}`)
         }catch(err){
             console.log(err);
             res.status(404).json({message:err});
@@ -141,7 +142,8 @@ const confirmBooking = asyncHandler(async(req,res) => {
 const failBooking = asyncHandler(async(req,res) => {
     console.log('confirm booking');
     console.log(req.params.tranId);
-    res.redirect(`http://localhost:5173/fail`)
+    // res.redirect(`http://localhost:5173/fail`)
+    res.redirect(`https://hotel-booking-rho-one.vercel.app//fail`)
 
 
     // const id = req.params.tranId.split('-')[1];
